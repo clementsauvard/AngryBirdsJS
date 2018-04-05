@@ -1,5 +1,5 @@
 var Sprite = function (v, w, h, m, dom) {
-    console.log(m);
+    console.log(this);
     Body.call(this,v, w, h, m);
     this.display = dom;
 
@@ -19,10 +19,11 @@ Sprite.prototype.draw = function () {
     //ctx.stroke();
     
     ctx.beginPath();
-    ctx.rect(this.origin.x, this.origin.y, this.origin.x+this.width, this.origin.y+this.height);
+    ctx.rect(this.origin.x, this.origin.y, this.width, this.height);
     ctx.fillStyle = 'black';
     ctx.fill();
     ctx.stroke();
+    //console.log(" : "+this.origin.x+" "+ this.origin.y +" "+ this.origin.x+this.width +" "+ this.origin.y+this.height);
     
     /*
     ctx.moveTo(0, 0);

@@ -32,25 +32,31 @@ var init = function () {
 
     var x = ev.offsetX;
     var y = ev.offsetY;
+    console.log("x : "+x + " y : "+y);
 
 
-    var div = document.createElement("div");
-    div.className = "object";
-    var sprite = new Sprite(new Vector(x,y), 30, 30, +document.getElementById("mass").value, div);
-    sprite.force = new Vector(0.0 ,0.0 );
-    canvas.appendChild(div);
+    //var div = document.createElement("div");
+    
+    //div.className = "object";
+    var sprite = new Sprite(new Vector(x,y), 30, 30, +document.getElementById("mass").value, canvas);
+    
+
+    sprite.force = new Vector(0.01 ,0.01 );
     engine.addBody(sprite);
+    
+    
+    //canvas.appendChild(div);
+    //engine.addBody(sprite);
 
-    div.addEventListener("click", function (ev) {
-        canvas.removeChild(div);
-        engine.removeBody(sprite);
+    canvas.addEventListener("click", function (ev) {
+        //engine.removeBody(sprite);
     });
 
 
 
     });
     
-    /* begin extra 
+    /* begin extra */
     var gravityInput = document.getElementById("gravity");
     var elasticityInput = document.getElementById("elasticity");
 
