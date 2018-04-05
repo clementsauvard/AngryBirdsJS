@@ -1,17 +1,23 @@
+$(function(){
+        
+
 var init = function () {
 
+    $.getJSON( "levels.json", function( json ) {
+    console.log(json.level1[1].length);
+ 
+    
     var canvas = document.getElementById("canvas");
-
-    var wall1 = new Sprite(new Vector(0,0   ), 1000, 20 , Infinity,canvas);
-    var wall2 = new Sprite(new Vector(0,580 ), 1000, 20 , Infinity,canvas);
-    var wall3 = new Sprite(new Vector(0,20  ), 20  , 560, Infinity,canvas);
-    var wall4 = new Sprite(new Vector(980,20), 20  , 560, Infinity,canvas);
-
+    canvas.width = json.level1[0].width;
+    canvas.height = json.level1[0].height;
+    
     var engine = new Engine();
-    engine.addBody(wall1);
-    engine.addBody(wall2);
-    engine.addBody(wall3);
-    engine.addBody(wall4);
+    
+    for (var i = 0; i < json.level1[1].length; i++){
+        var wall1 = new Sprite(new Vector(json.level1[1][i].xWall,json.level1[1][i].yWall), json.level1[1][i].width, json.level1[1][i].height , Infinity,canvas);
+
+        engine.addBody(wall1);
+    }
     
 
     var renderer = new Renderer(engine);
@@ -45,6 +51,7 @@ var init = function () {
     engine.addBody(sprite);
     
     
+  
     //canvas.appendChild(div);
     //engine.addBody(sprite);
 
@@ -75,6 +82,10 @@ var init = function () {
     /* end extra */
     
     
+});
 };
 
 window.addEventListener("load", init);
+    
+
+});
