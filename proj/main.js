@@ -18,19 +18,19 @@ var init = function () {
 
         engine.addBody(wall1);
     }
-    
-
+          
+    var bird = new Bird(new Vector(200, 400), 30, 30, 100,canvas);
+    bird.force = new Vector(0.0, 0.0);
+    bird.mass = 1000000;   
+    engine.addBody(bird);
+        
     var renderer = new Renderer(engine);
-    var interval;
-    interval = setInterval(function () {
-    try {
-            renderer.update(1000/60);
-    } catch (e) {
-        clearInterval(interval);
-        throw (e);
+      
+    function drawPage() {
+        renderer.update(1000/60);
+        requestAnimationFrame(drawPage);
     }
-    }, 1000/60);
-    
+    requestAnimationFrame(drawPage);
 
     var initX;
     var initY;
@@ -40,7 +40,10 @@ var init = function () {
 
     var xvect;
     var yvect;
-    
+
+    var vectTest;
+    var masse;
+
     canvas.addEventListener("click", function (ev) {
         if (this != ev.target) return;
 
@@ -48,40 +51,54 @@ var init = function () {
         var y = ev.offsetY;
         console.log("x : "+x + " y : "+y);
 
+        
+        
+        var sprite = new Bird(new Vector(x, y), 30, 30, masse, canvas);
 
-        var sprite = new Sprite(new Vector(x,y), 30, 30, +document.getElementById("mass").value, canvas);
-
-
-        sprite.force = new Vector(0.01 ,-0.01);
+        sprite.force = vectTest.normalize();
         engine.addBody(sprite);
-
-        /*
-        canvas.addEventListener("click", function (ev) {
-            //engine.removeBody(sprite);
-        });
-        */
+        
     });
 
-    $("#canvas").mousedown(function(e){
+    $("#canvas").mousedown(function (e) {
         initX = e.offsetX;
         initY = e.offsetY;
-        console.log(initX + " " + initY);
     });
 
-    $("#canvas").mousemove(function(e){
-     if(e.which==1)
-         {
+    $("#canvas").mousemove(function (e) {
+        if (e.which == 1) {
             moveX = e.offsetX;
             moveY = e.offsetY;
-            console.log("x : "+moveX + " y : "+moveY);
-         }
+        }
     });
 
-    $("#canvas").mouseup(function(e){
+    $("#canvas").mouseup(function (e) {
         xvect = moveX - initX;
         yvect = moveY - initY;
-        console.log("x : "+xvect + " y : "+yvect);
+        vectTest = new Vector(-xvect, -yvect);
+        masse = Distance(initX,initY,moveX,moveY);
     });
+        
+   function sqr(a) {
+       return a * a;
+   }
+
+   function Distance(x1, y1, x2, y2) {
+       return Math.sqrt(sqr(y2 - y1) + sqr(x2 - x1));
+   }
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
     /* begin extra */
     var gravityInput = document.getElementById("gravity");
     var elasticityInput = document.getElementById("elasticity");
@@ -96,8 +113,6 @@ var init = function () {
     elasticityInput.addEventListener ("input", function () {
     Constants.elasticity = +(elasticityInput.value);
     });
-
-
     /* end extra */
     
     
