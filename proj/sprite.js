@@ -2,7 +2,6 @@ var Sprite = function (v, w, h, m, dom) {
     console.log(this);
     Body.call(this,v, w, h, m);
     this.display = dom;
-
 };
 
 Sprite.prototype = Object.create (Body.prototype);

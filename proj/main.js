@@ -32,37 +32,56 @@ var init = function () {
     }, 1000/60);
     
 
+    var initX;
+    var initY;
+
+    var moveX;
+    var moveY;
+
+    var xvect;
+    var yvect;
+    
     canvas.addEventListener("click", function (ev) {
-    if (this != ev.target) return;
-    
+        if (this != ev.target) return;
 
-    var x = ev.offsetX;
-    var y = ev.offsetY;
-    console.log("x : "+x + " y : "+y);
+        var x = ev.offsetX;
+        var y = ev.offsetY;
+        console.log("x : "+x + " y : "+y);
 
 
-    //var div = document.createElement("div");
-    
-    //div.className = "object";
-    var sprite = new Sprite(new Vector(x,y), 30, 30, +document.getElementById("mass").value, canvas);
-    
+        var sprite = new Sprite(new Vector(x,y), 30, 30, +document.getElementById("mass").value, canvas);
 
-    sprite.force = new Vector(0.01 ,0.01 );
-    engine.addBody(sprite);
-    
-    
-  
-    //canvas.appendChild(div);
-    //engine.addBody(sprite);
 
-    canvas.addEventListener("click", function (ev) {
-        //engine.removeBody(sprite);
+        sprite.force = new Vector(0.01 ,-0.01);
+        engine.addBody(sprite);
+
+        /*
+        canvas.addEventListener("click", function (ev) {
+            //engine.removeBody(sprite);
+        });
+        */
     });
 
-
-
+    $("#canvas").mousedown(function(e){
+        initX = e.offsetX;
+        initY = e.offsetY;
+        console.log(initX + " " + initY);
     });
-    
+
+    $("#canvas").mousemove(function(e){
+     if(e.which==1)
+         {
+            moveX = e.offsetX;
+            moveY = e.offsetY;
+            console.log("x : "+moveX + " y : "+moveY);
+         }
+    });
+
+    $("#canvas").mouseup(function(e){
+        xvect = moveX - initX;
+        yvect = moveY - initY;
+        console.log("x : "+xvect + " y : "+yvect);
+    });
     /* begin extra */
     var gravityInput = document.getElementById("gravity");
     var elasticityInput = document.getElementById("elasticity");
