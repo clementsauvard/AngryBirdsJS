@@ -19,9 +19,8 @@ var init = function () {
         engine.addBody(wall1);
     }
           
-    var bird = new Bird(new Vector(200, 400), 30, 30, 100,canvas);
-    bird.force = new Vector(0.0, 0.0);
-    bird.mass = 1000000;   
+    var bird = new Bird(new Vector(200, 400), 30, 30, 10000,canvas);
+    bird.force = new Vector(0.0, 0.0);  
     engine.addBody(bird);
         
     var renderer = new Renderer(engine);
@@ -43,26 +42,17 @@ var init = function () {
 
     var vectTest;
     var masse;
+    
+    var drag = false;
 
-    canvas.addEventListener("click", function (ev) {
-        if (this != ev.target) return;
-
-        var x = ev.offsetX;
-        var y = ev.offsetY;
-        console.log("x : "+x + " y : "+y);
-
-        
-        
-        var sprite = new Bird(new Vector(x, y), 30, 30, masse, canvas);
-
-        sprite.force = vectTest.normalize();
-        engine.addBody(sprite);
-        
-    });
+    
 
     $("#canvas").mousedown(function (e) {
-        initX = e.offsetX;
-        initY = e.offsetY;
+        if(e.offsetX > bird.origin.x && e.offsetX < bird.origin.x + bird.width &&  e.offsetY > bird.origin.y && e.offsetY < bird.origin.y + bird.height){
+            initX = e.offsetX;
+            initY = e.offsetY;
+            drag = true;
+        }
     });
 
     $("#canvas").mousemove(function (e) {
@@ -73,31 +63,27 @@ var init = function () {
     });
 
     $("#canvas").mouseup(function (e) {
+        if (this != e.target) return;
         xvect = moveX - initX;
         yvect = moveY - initY;
         vectTest = new Vector(-xvect, -yvect);
         masse = Distance(initX,initY,moveX,moveY);
+        if(drag){
+            bird.force = vectTest.normalize();
+            bird.mass = masse;
+            bird.invMass = 1/bird.mass;
+            drag = false;
+        }
     });
-        
-   function sqr(a) {
-       return a * a;
-   }
+    
+    function sqr(a) {
+        return a * a;
+    }
 
-   function Distance(x1, y1, x2, y2) {
-       return Math.sqrt(sqr(y2 - y1) + sqr(x2 - x1));
-   }
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
+    function Distance(x1, y1, x2, y2) {
+        return Math.sqrt(sqr(y2 - y1) + sqr(x2 - x1));
+    }
+         
         
     /* begin extra */
     var gravityInput = document.getElementById("gravity");
