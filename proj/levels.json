@@ -29,18 +29,45 @@
             "yWall" : 20,
             "width" : 20,
             "height": 560
-        }]
-    ],
+        }],
+    {
+        "birdPosX" : 200,
+        "birdPosY" : 300,
+        "birdHeight" : 30,
+        "birdWidth" : 30,
+        "masse" : 10000
+    } 
+],
 "level2" : [
     {
-        "title" : "Mulagatawny Soup",
-        "description" : "Lorem ipsum dolor sit amet, conse adipiscing elit.",
-        "cost" : "3.75"
+        "width" : 1000,
+        "height" : 600,
+        "title" : "bob"
+
     },
-    {
-        "title" : "Daal Soup",
-        "description" : "Lorem ipsum dolor sit amet, conse adipiscing elit.",
-        "cost" : "3.25"
-    }
+        [{
+            "xWall" : 0,
+            "yWall" : 0,
+            "width" : 1000,
+            "height": 20
+        },
+        {
+            "xWall" : 0,
+            "yWall" : 580,
+            "width" : 1000,
+            "height": 20
+        },
+        {
+            "xWall" : 0,
+            "yWall" : 20,
+            "width" : 20,
+            "height": 560
+        },
+        {
+            "xWall" : 980,
+            "yWall" : 20,
+            "width" : 20,
+            "height": 560
+        }]
     ]
 }

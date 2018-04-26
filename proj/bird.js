@@ -20,8 +20,9 @@ Bird.prototype.draw = function () {
     
     
     /* begin extra */
-    if (this.hasCollision) {
-	//this.display.style.backgroundColor = "red";
+    if (this.hasCollision && Constants.elasticity > 0) {
+        console.log(Constants.elasticity);
+	   Constants.elasticity -= 0.15;
 	this.setCollision(false);
     } else {
 	//this.display.style.backgroundColor = "";

@@ -19,9 +19,10 @@ var init = function () {
         engine.addBody(wall1);
     }
           
-    var bird = new Bird(new Vector(200, 400), 30, 30, 10000,canvas);
+    var bird = new Bird(new Vector(json.level1[2].birdPosX, json.level1[2].birdPosY), json.level1[2].birdWidth, json.level1[2].birdHeight, Infinity,canvas);
     bird.force = new Vector(0.0, 0.0);  
     engine.addBody(bird);
+    Constants.gravity = new Vector (0, 0.0002);
         
     var renderer = new Renderer(engine);
       
@@ -41,7 +42,6 @@ var init = function () {
     var yvect;
 
     var vectTest;
-    var masse;
     
     var drag = false;
 
@@ -66,25 +66,16 @@ var init = function () {
         if (this != e.target) return;
         xvect = moveX - initX;
         yvect = moveY - initY;
-        vectTest = new Vector(-xvect, -yvect);
-        masse = Distance(initX,initY,moveX,moveY);
+        // x2 pour plus de rapidité
+        vectTest = new Vector(2*(-xvect), 2*(-yvect));
         if(drag){
-            bird.force = vectTest.normalize();
-            bird.mass = masse;
-            bird.invMass = 1/bird.mass;
+            bird.mass = json.level1[2].masse;
+            bird.invMass = 1/json.level1[2].masse;
+            bird.force = vectTest;
             drag = false;
         }
     });
-    
-    function sqr(a) {
-        return a * a;
-    }
-
-    function Distance(x1, y1, x2, y2) {
-        return Math.sqrt(sqr(y2 - y1) + sqr(x2 - x1));
-    }
-         
-        
+       
     /* begin extra */
     var gravityInput = document.getElementById("gravity");
     var elasticityInput = document.getElementById("elasticity");
@@ -105,7 +96,7 @@ var init = function () {
 });
 };
 
-window.addEventListener("load", init);
-    
+//window.addEventListener("load", init);
+init();    
 
 });
