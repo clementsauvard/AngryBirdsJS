@@ -20,7 +20,9 @@ Cible.prototype.draw = function () {
     
     /* begin extra */
     if (this.hasCollision) {
-	this.display.style.backgroundColor = "green";
+	   this.display.style.backgroundColor = "green";
+        cancelAnimationFrame(idAnimation);
+        init();
 	this.setCollision(false);
     } else {
 	//this.display.style.backgroundColor = "";
