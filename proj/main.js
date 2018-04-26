@@ -18,6 +18,7 @@ var init = function () {
 
         engine.addBody(wall1);
     }
+<<<<<<< HEAD
         
     for (var i = 0; i < json.level1[2].length; i++){
         var wall2 = new Sprite(new Vector(json.level1[2][i].xWall,json.level1[2][i].yWall), json.level1[2][i].width, json.level1[2][i].height , Infinity,canvas);
@@ -26,6 +27,20 @@ var init = function () {
     }
         
     var bird = new Bird(new Vector(json.level1[3].birdPosX, json.level1[3].birdPosY), json.level1[3].birdWidth, json.level1[3].birdHeight, Infinity,canvas);
+=======
+
+    //HARDCODE    
+    var cible = new Cible(new Vector(400, 400), 30, 30, Infinity,canvas);
+    //cible.force = new Vector(0.0, 0.0);  
+    engine.addBody(cible);
+
+
+    //HARDCODE
+
+
+          
+    var bird = new Bird(new Vector(json.level1[2].birdPosX, json.level1[2].birdPosY), json.level1[2].birdWidth, json.level1[2].birdHeight, Infinity,canvas);
+>>>>>>> 8dbb4164183f2e5b7bb37a3903c86dca02027934
     bird.force = new Vector(0.0, 0.0);  
     engine.addBody(bird);
     Constants.gravity = new Vector (0, 0.0002);
