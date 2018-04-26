@@ -84,6 +84,25 @@ Body.prototype.collision = function (b) {
 
 	b.setCollision(true);
 	this.setCollision(true);
+		
+		if (b.constructor.name > this.constructor.name)
+		{
+			s1 =b.constructor.name
+			s2 =this.constructor.name
+		}
+		else
+		{
+			s1 =this.constructor.name
+			s2 =b.constructor.name
+		}
+
+		if(s1=="Cible" && s2=="Bird")
+		{
+			console.log(s1+" "+s2);
+			this.display.style.backgroundColor = "red";
+		}
+		//console.log(s1+" "+s2);
+
 
         return { velocity1 : new_v, velocity2 : new_bv };
 

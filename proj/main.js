@@ -18,6 +18,16 @@ var init = function () {
 
         engine.addBody(wall1);
     }
+
+    //HARDCODE    
+    var cible = new Cible(new Vector(400, 400), 30, 30, Infinity,canvas);
+    //cible.force = new Vector(0.0, 0.0);  
+    engine.addBody(cible);
+
+
+    //HARDCODE
+
+
           
     var bird = new Bird(new Vector(json.level1[2].birdPosX, json.level1[2].birdPosY), json.level1[2].birdWidth, json.level1[2].birdHeight, Infinity,canvas);
     bird.force = new Vector(0.0, 0.0);  
