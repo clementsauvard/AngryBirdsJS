@@ -1,5 +1,4 @@
 var Bird = function (v, w, h, m, dom) {
-    console.log(this);
     Body.call(this,v, w, h, m);
     this.display = dom;
 };
@@ -21,11 +20,10 @@ Bird.prototype.draw = function () {
     
     /* begin extra */
     if (this.hasCollision && Constants.elasticity > 0) {
-        console.log(Constants.elasticity);
-	   Constants.elasticity -= 0.15;
-	this.setCollision(false);
+        Constants.elasticity -= 0.15;
+        this.setCollision(false);
     } else {
-	//this.display.style.backgroundColor = "";
+        //this.display.style.backgroundColor = "";
     };
 
     /* end extra */

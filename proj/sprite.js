@@ -1,5 +1,4 @@
 var Sprite = function (v, w, h, m, dom) {
-    console.log(this);
     Body.call(this,v, w, h, m);
     this.display = dom;
 };
@@ -24,10 +23,10 @@ Sprite.prototype.draw = function () {
     
     /* begin extra */
     if (this.hasCollision) {
-	//this.display.style.backgroundColor = "red";
-	this.setCollision(false);
+        //this.display.style.backgroundColor = "red";
+        this.setCollision(false);
     } else {
-	//this.display.style.backgroundColor = "";
+        //this.display.style.backgroundColor = "";
     };
 
     /* end extra */

@@ -1,7 +1,6 @@
 var idAnimation;
 var engine = new Engine();
 var bird;
-var renderer;
 var init = function () {
     $(function(){
         
@@ -10,8 +9,6 @@ var init = function () {
             
             Constants.elasticity = 1;
             Constants.gravity = new Vector (0, 0.0002);
-            console.log("Elasticity : " + Constants.elasticity);
-            console.log(Constants.gravity);
             
             var canvas = document.getElementById("canvas");
             canvas.width = json.level1[0].width;
@@ -34,7 +31,6 @@ var init = function () {
             bird = new Bird(new Vector(json.level1[3].birdPosX, json.level1[3].birdPosY), json.level1[3].birdWidth, json.level1[3].birdHeight, Infinity,canvas);
             bird.force = new Vector(0.0, 0.0);  
             engine.addBody(bird);
-            console.log(bird.mass);
 
 
             //HARDCODE    
@@ -45,13 +41,19 @@ var init = function () {
 
 
 
-             renderer = new Renderer(engine);
-
+            var renderer = new Renderer(engine);
+            
+            start();
             function drawPage() {
+                idAnimation = undefined;
                 renderer.update(1000/60);
-                idAnimation = requestAnimationFrame(drawPage);
+                start();
             }
-            drawPage();
+            function start() {
+                if (!idAnimation) {
+                   idAnimation = window.requestAnimationFrame(drawPage);
+                }
+            }
 
             var initX;
             var initY;
@@ -109,4 +111,12 @@ var init = function () {
     });
 };
 //window.addEventListener("load", init);
-init();    
+
+
+function stop() {
+    if (idAnimation) {
+       window.cancelAnimationFrame(idAnimation);
+       idAnimation = undefined;
+    }
+}
+init(); 

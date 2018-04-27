@@ -1,5 +1,4 @@
 var Cible = function (v, w, h, m, dom) {
-    console.log(this);
     Body.call(this,v, w, h, m);
     this.display = dom;
 };
@@ -20,17 +19,14 @@ Cible.prototype.draw = function () {
     
     /* begin extra */
     if (this.hasCollision) {
-        console.log("Elasticity : " + Constants.elasticity);
-        console.log(Constants.gravity);
-	    //this.display.style.backgroundColor = "green";
-        //cancelAnimationFrame(idAnimation);
+        //this.display.style.backgroundColor = "green";
+        stop();
         engine.bodies = [];
         bird = null;
-        renderer = null;
         init();
-	this.setCollision(false);
+        this.setCollision(false);
     } else {
-	//this.display.style.backgroundColor = "";
+        //this.display.style.backgroundColor = "";
     };
 
     /* end extra */
