@@ -27,7 +27,7 @@ var init = function (level) {
             }
 
 
-            bird = new Bird(new Vector(json[level].level[3].birdPosX, json[level].level[3].birdPosY), json[level].level[3].birdWidth, json[level].level[3].birdHeight, Infinity,1,canvas);
+            bird = new Bird(new Vector(json[level].level[3].birdPosX, json[level].level[3].birdPosY), json[level].level[3].birdWidth, json[level].level[3].birdHeight, Infinity,0.7,canvas);
             bird.force = new Vector(0.0, 0.0);  
             engine.addBody(bird);
 
@@ -51,8 +51,16 @@ var init = function (level) {
 
             var renderer = new Renderer(engine);
             
+            var before,now,fps;
+            before=Date.now();
+            fps = 0;
+            
             start();
+            
             function drawPage() {
+                now = Date.now();
+                fps=Math.round(1000/(now-before))
+                before = now;
                 idAnimation = undefined;
                 renderer.update(1000/60);
                 start();
@@ -60,6 +68,7 @@ var init = function (level) {
             function start() {
                 if (!idAnimation) {
                    idAnimation = window.requestAnimationFrame(drawPage);
+                   $("#showFPS").text("FPS : "+ fps);
                 }
             }
 
@@ -90,7 +99,7 @@ var init = function (level) {
                 if (this != e.target) return;
                 var xvect = moveX - initX;
                 var yvect = moveY - initY;
-                var vectTest = new Vector(-xvect, -yvect);
+                var vectTest = new Vector(1.3*(-xvect), 1.3*(-yvect));
                 if(drag){
                     bird.mass = json[level].level[3].masse;
                     bird.invMass = 1/json[level].level[3].masse;
