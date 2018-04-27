@@ -22,13 +22,16 @@ Bird.prototype.draw = function () {
 
     /* begin extra */
     if (this.hasCollision && this.elasticity > 0) {
-        if (this.velocity.x <0.01 && this.velocity.y < 0.01){
+        if (Math.abs(this.velocity.x) <0.01 && Math.abs(this.velocity.y) < 0.01){
             this.stopcpt=this.stopcpt+1;
             if (this.stopcpt>100){
             launch=false;
             console.log("XDD");
-
-            //$.getJSON( "levels.json", function( json ) {
+            this.origin = new Vector(savePosX,savePosY);
+            this.force = new Vector(0.0,0.0);
+            this.velocity = new Vector(0.0,0.0);
+            this.mass = Infinity;
+            this.invMass = 1/Infinity;
             this.stopcpt=0;
 
 

@@ -3,6 +3,8 @@ var level = 0;
 var idAnimation;
 var engine = new Engine();
 var bird;
+var savePosX;
+var savePosY;
 var init = function (level) {
     $(function(){
         
@@ -38,6 +40,8 @@ var init = function (level) {
             }
 
             bird = new Bird(new Vector(json[level].level[3].birdPosX, json[level].level[3].birdPosY), json[level].level[3].birdWidth, json[level].level[3].birdHeight, Infinity,0.7,canvas);
+            savePosX = json[level].level[3].birdPosX;
+            savePosY = json[level].level[3].birdPosY;
             bird.force = new Vector(0.0, 0.0);  
             engine.addBody(bird);
 
