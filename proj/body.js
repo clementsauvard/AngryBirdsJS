@@ -99,7 +99,7 @@ Body.prototype.collision = function (b) {
 		if(s1=="Cible" && s2=="Bird")
 		{
 			console.log(s1+" "+s2);
-			this.display.style.backgroundColor = "red";
+			//this.display.style.backgroundColor = "red";
 		}
 		//console.log(s1+" "+s2);
 

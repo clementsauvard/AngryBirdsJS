@@ -20,8 +20,13 @@ Cible.prototype.draw = function () {
     
     /* begin extra */
     if (this.hasCollision) {
-	   this.display.style.backgroundColor = "green";
-        cancelAnimationFrame(idAnimation);
+        console.log("Elasticity : " + Constants.elasticity);
+        console.log(Constants.gravity);
+	    //this.display.style.backgroundColor = "green";
+        //cancelAnimationFrame(idAnimation);
+        engine.bodies = [];
+        bird = null;
+        renderer = null;
         init();
 	this.setCollision(false);
     } else {
