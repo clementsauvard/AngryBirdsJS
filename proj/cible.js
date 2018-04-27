@@ -20,10 +20,11 @@ Cible.prototype.draw = function () {
     /* begin extra */
     if (this.hasCollision) {
         //this.display.style.backgroundColor = "green";
+        level++;
         stop();
         engine.bodies = [];
         bird = null;
-        init();
+        init(level);
         this.setCollision(false);
     } else {
         //this.display.style.backgroundColor = "";
