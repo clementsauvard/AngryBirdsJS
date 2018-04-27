@@ -7,7 +7,6 @@ var init = function () {
         $.getJSON( "levels.json", function( json ) {
             //console.log(json.level1[1].length);
             
-            Constants.elasticity = 1;
             Constants.gravity = new Vector (0, 0.0002);
             
             var canvas = document.getElementById("canvas");
@@ -16,30 +15,43 @@ var init = function () {
 
 
             for (var i = 0; i < json.level1[1].length; i++){
-                var wall1 = new Sprite(new Vector(json.level1[1][i].xWall,json.level1[1][i].yWall), json.level1[1][i].width, json.level1[1][i].height , Infinity,canvas);
+                var wall1 = new Sprite(new Vector(json.level1[1][i].xWall,json.level1[1][i].yWall), json.level1[1][i].width, json.level1[1][i].height , Infinity,1,canvas);
 
                 engine.addBody(wall1);
             }
 
 
             for (var i = 0; i < json.level1[2].length; i++){
-                var wall2 = new Sprite(new Vector(json.level1[2][i].xWall,json.level1[2][i].yWall), json.level1[2][i].width, json.level1[2][i].height , Infinity,canvas);
+                var wall2 = new Sprite(new Vector(json.level1[2][i].xWall,json.level1[2][i].yWall), json.level1[2][i].width, json.level1[2][i].height , Infinity,1,canvas);
 
                 engine.addBody(wall2);
             }
 
-            bird = new Bird(new Vector(json.level1[3].birdPosX, json.level1[3].birdPosY), json.level1[3].birdWidth, json.level1[3].birdHeight, Infinity,canvas);
+            bird = new Bird(new Vector(json.level1[3].birdPosX, json.level1[3].birdPosY), json.level1[3].birdWidth, json.level1[3].birdHeight, Infinity,0.8,canvas);
             bird.force = new Vector(0.0, 0.0);  
             engine.addBody(bird);
 
 
             //HARDCODE    
-            var cible = new Cible(new Vector(900, 500), 30, 30, Infinity,canvas);
+            var cible = new Cible(new Vector(900, 500), 30, 30, Infinity,1,canvas);
             //cible.force = new Vector(0.0, 0.0);  
             engine.addBody(cible);
+
+            
+
+            var box1 = new Box(new Vector(800, 400), 50, 50, 500,0.5,canvas);
+            engine.addBody(box1);
+            var box1 = new Box(new Vector(800, 300), 50, 50, 500,0.5,canvas);
+            engine.addBody(box1);
+            var box1 = new Box(new Vector(800, 250), 50, 50, 500,0.5,canvas);
+            engine.addBody(box1);
+            var box1 = new Box(new Vector(400, 300), 50, 50, 500,0.5,canvas);
+            engine.addBody(box1);
+            var box1 = new Box(new Vector(400, 360), 50, 50, 500,0.5,canvas);
+            engine.addBody(box1);
+
+
             //HARDCODE
-
-
 
             var renderer = new Renderer(engine);
             
@@ -92,21 +104,6 @@ var init = function () {
             });
         });
 
-        /* 
-        var gravityInput = document.getElementById("gravity");
-        var elasticityInput = document.getElementById("elasticity");
-
-
-        gravityInput.value = Constants.gravity.y;
-        elasticityInput.value = Constants.elasticity;
-
-        gravityInput.addEventListener ("input", function () {
-        Constants.gravity = new Vector (0, +(gravityInput.value));
-        });
-        elasticityInput.addEventListener ("input", function () {
-        Constants.elasticity = +(elasticityInput.value);
-        });
-         */
 
     });
 };

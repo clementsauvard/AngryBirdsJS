@@ -1,5 +1,5 @@
-var Sprite = function (v, w, h, m, dom) {
-    Body.call(this,v, w, h, m);
+var Sprite = function (v, w, h, m,e, dom) {
+    Body.call(this,v, w, h, m,e);
     this.display = dom;
 };
 

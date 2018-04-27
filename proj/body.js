@@ -1,9 +1,10 @@
-var Body = function (v, w, h, m) {
-    Rect.call(this, v, w, h);
+var Body = function (v, w, h, m,e) {
+    Rect.call(this, v, w, h,e);
     this.mass = m || 0;
     this.invMass = 1/this.mass;
     this.velocity = Vector.ZERO;
     this.force = Vector.ZERO;
+    this.elasticity=e;
 
     /* begin en bonus */
     this.hasCollision = false;
@@ -74,13 +75,14 @@ Body.prototype.collision = function (b) {
 
         // (2) On calcule l'impulsion j :
         var v = this.velocity.sub(b.velocity);
-        var e = Constants.elasticity; // pour les étudiants, juste faire var e = 1;
+        var e = this.elasticity; // pour les étudiants, juste faire var e = 1;
 
-        var j = -(1 + e) * v.dot(n) / (this.invMass + b.invMass);
+        var j1 = -(1 + e) * v.dot(n) / (this.invMass + b.invMass);
+		var j2 = -(1 + b.elasticity) * v.dot(n) / (this.invMass + b.invMass);
 
         // (3) On calcule les nouvelle vitesse:
-        var new_v = this.velocity.add(n.mult(j  * this.invMass));
-        var new_bv = b.velocity.sub(n.mult(j * b.invMass));
+        var new_v = this.velocity.add(n.mult(j1  * this.invMass));
+        var new_bv = b.velocity.sub(n.mult(j2 * b.invMass));
 
 	b.setCollision(true);
 	this.setCollision(true);
