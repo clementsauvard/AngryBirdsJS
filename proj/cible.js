@@ -1,5 +1,5 @@
-var Cible = function (v, w, h, m, dom) {
-    Body.call(this,v, w, h, m);
+var Cible = function (v, w, h, m ,e ,dom ) {
+    Body.call(this,v, w, h, m,e);
     this.display = dom;
 };
 
