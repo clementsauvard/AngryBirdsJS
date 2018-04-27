@@ -69,11 +69,9 @@ var init = function (level) {
                         img.src = '/img/slingshot.png';
                         var ctx=canvas.getContext("2d");
                         ctx.beginPath();
-                        ctx.drawImage(img,moveX, moveY, 50, 50);
-                        /*
+                        ctx.drawImage(img,moveX-20, moveY-50, 50, 50);
                         ctx.moveTo(initX,initY);
                         ctx.lineTo(moveX,moveY);
-                        */
                         ctx.stroke();
                     }
                 }
