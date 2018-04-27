@@ -19,8 +19,8 @@ Bird.prototype.draw = function () {
     
     
     /* begin extra */
-    if (this.hasCollision) {
-        
+    if (this.hasCollision && this.elasticity > 0) {
+        this.elasticity -= 0.15;
         this.setCollision(false);
     } else {
         //this.display.style.backgroundColor = "";
