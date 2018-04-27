@@ -1,3 +1,4 @@
+var launch= false;
 var level = 0;
 var idAnimation;
 var engine = new Engine();
@@ -103,8 +104,8 @@ var init = function (level) {
             });
 
             $("#canvas").mouseup(function (e) {
-                if (this != e.target) return;
-                e.preventDefault();
+                if (this != e.target || launch==true) return;
+                launch=true;
                 var xvect = moveX - initX;
                 var yvect = moveY - initY;
                 var vectTest = new Vector(1.3*(-xvect), 1.3*(-yvect));

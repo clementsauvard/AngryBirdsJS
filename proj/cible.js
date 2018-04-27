@@ -20,6 +20,7 @@ Cible.prototype.draw = function () {
     /* begin extra */
     if (this.hasCollision) {
         //this.display.style.backgroundColor = "green";
+        launch=false;
         level++;
         stop();
         engine.bodies = [];
