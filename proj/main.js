@@ -5,6 +5,8 @@ var bird;
 var init = function (level) {
     $(function(){
         
+        $("#niveau").text("Niveau : " + level);
+        
         $.getJSON( "levels.json", function( json ) {
             console.log(json);
             
@@ -25,7 +27,14 @@ var init = function (level) {
                 var wall2 = new Sprite(new Vector(json[level].level[2][i].xWall,json[level].level[2][i].yWall), json[level].level[2][i].width, json[level].level[2][i].height , Infinity,1,canvas);
                 engine.addBody(wall2);
             }
-
+            
+            console.log(json[level].level[5]);
+            if (json[level].level[5] != null){
+                for (var i = 0; i < json[level].level[5].length; i++){
+                    var box = new Box(new Vector(json[level].level[5][i].xBox,json[level].level[5][i].yBox), json[level].level[5][i].boxWidth, json[level].level[5][i].boxHeight , 500,0.5,canvas);
+                    engine.addBody(box);
+                }
+            }
 
             bird = new Bird(new Vector(json[level].level[3].birdPosX, json[level].level[3].birdPosY), json[level].level[3].birdWidth, json[level].level[3].birdHeight, Infinity,0.7,canvas);
             bird.force = new Vector(0.0, 0.0);  
@@ -34,20 +43,6 @@ var init = function (level) {
             
             var cible = new Cible(new Vector(json[level].level[4].ciblePosX, json[level].level[4].ciblePosY), json[level].level[4].cibleWidth, json[level].level[4].cibleHeight, Infinity,1,canvas);
             engine.addBody(cible);
-
-
-            var box1 = new Box(new Vector(800, 400), 50, 50, 500,0.5,canvas);
-            engine.addBody(box1);
-            var box1 = new Box(new Vector(800, 300), 50, 50, 500,0.5,canvas);
-            engine.addBody(box1);
-            var box1 = new Box(new Vector(800, 250), 50, 50, 500,0.5,canvas);
-            engine.addBody(box1);
-            var box1 = new Box(new Vector(400, 300), 50, 50, 500,0.5,canvas);
-            engine.addBody(box1);
-            var box1 = new Box(new Vector(400, 360), 50, 50, 500,0.5,canvas);
-            engine.addBody(box1);
-
-
 
             var renderer = new Renderer(engine);
             
@@ -69,6 +64,18 @@ var init = function (level) {
                 if (!idAnimation) {
                    idAnimation = window.requestAnimationFrame(drawPage);
                    $("#showFPS").text("FPS : "+ fps);
+                    if (drag){
+                        var img = new Image();   // Crée un nouvel élément Image
+                        img.src = '/img/slingshot.png';
+                        var ctx=canvas.getContext("2d");
+                        ctx.beginPath();
+                        ctx.drawImage(img,moveX, moveY, 50, 50);
+                        /*
+                        ctx.moveTo(initX,initY);
+                        ctx.lineTo(moveX,moveY);
+                        */
+                        ctx.stroke();
+                    }
                 }
             }
 
@@ -82,6 +89,7 @@ var init = function (level) {
 
             $("#canvas").mousedown(function (e) {
                 if(e.offsetX > bird.origin.x && e.offsetX < bird.origin.x + bird.width &&  e.offsetY > bird.origin.y && e.offsetY < bird.origin.y + bird.height){
+                    e.preventDefault();
                     initX = e.offsetX;
                     initY = e.offsetY;
                     drag = true;
@@ -90,6 +98,7 @@ var init = function (level) {
 
             $("#canvas").mousemove(function (e) {
                 if (e.which == 1) {
+                    e.preventDefault();
                     moveX = e.offsetX;
                     moveY = e.offsetY;
                 }
@@ -97,6 +106,7 @@ var init = function (level) {
 
             $("#canvas").mouseup(function (e) {
                 if (this != e.target) return;
+                e.preventDefault();
                 var xvect = moveX - initX;
                 var yvect = moveY - initY;
                 var vectTest = new Vector(1.3*(-xvect), 1.3*(-yvect));

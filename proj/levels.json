@@ -141,7 +141,37 @@
             "ciblePosY" : 500,
             "cibleHeight" : 30,
             "cibleWidth" : 30
-        } 
+        },
+        [{
+            "xBox" : 800,
+            "yBox" : 400,
+            "boxWidth" : 50,
+            "boxHeight": 50
+        },
+        {
+            "xBox" : 800,
+            "yBox" : 300,
+            "boxWidth" : 50,
+            "boxHeight": 50
+        },
+         {
+            "xBox" : 800,
+            "yBox" : 250,
+            "boxWidth" : 50,
+            "boxHeight": 50
+        },
+         {
+            "xBox" : 400,
+            "yBox" : 360,
+            "boxWidth" : 50,
+            "boxHeight": 50
+        },
+        {
+            "xBox" : 400,
+            "yBox" : 300,
+            "boxWidth" : 50,
+            "boxHeight": 50
+        }]
     ]
     }
 ]
