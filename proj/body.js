@@ -114,10 +114,6 @@ Body.prototype.collision = function (b) {
 		}
 
 
-		var impact=(Math.abs(s2.velocity.x)-Math.abs(s1.velocity.x))+(Math.abs(s2.velocity.y)-Math.abs(s1.velocity.y));
-
-
-		console.log(Math.floor(Math.log(impact*100))-2);
 
 		if(s1.constructor.name=="Bird" || s2.constructor.name=="Bird")
 		{
@@ -125,11 +121,24 @@ Body.prototype.collision = function (b) {
 			{
 				let x=s1;
 				s1=s2;
-				s2=s1;
+				s2=x;
 			}
-			if(s1.life>0)
+			//console.log(s1);
+			//console.log(s2);
+			var impact=(Math.abs(s1.velocity.x)-Math.abs(s2.velocity.x))+(Math.abs(s1.velocity.y)-Math.abs(s2.velocity.y));
+			impact=Math.floor(Math.log2(impact*100))-3;
+			if(impact<0){impact=0;}
+			console.log(impact);
+			
+			if(s2.life>0)
 			{
+				s2.life = s2.life - impact;	
+				if(s2.life<1)
+				{
+
+					engine.removeBody(s2);				
 				
+				}
 			}
 		}		
 		//console.log(s1+" "+s2);
