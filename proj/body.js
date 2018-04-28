@@ -1,11 +1,11 @@
-var Body = function (v, w, h, m,e) {
-    Rect.call(this, v, w, h,e);
+var Body = function (v, w, h, m,e,l) {
+    Rect.call(this, v, w, h);
     this.mass = m || 0;
     this.invMass = 1/this.mass;
     this.velocity = Vector.ZERO;
     this.force = Vector.ZERO;
     this.elasticity=e;
-
+    this.life=l;
     /* begin en bonus */
     this.hasCollision = false;
     /* end en bonus */
@@ -89,16 +89,18 @@ Body.prototype.collision = function (b) {
 		
 		if (b.constructor.name > this.constructor.name)
 		{
-			s1 =b.constructor.name
-			s2 =this.constructor.name
+			s1 =b
+			s2 =this
 		}
 		else
 		{
-			s1 =this.constructor.name
-			s2 =b.constructor.name
+			s1 =this
+			s2 =b
 		}
 
-		if(s1=="Cible" && s2=="Bird")
+		//console.log(engine);
+		//engine.removeBody(this);
+		if(s1.constructor.name=="Cible" && s2.constructor.name=="Bird")
 		{
             $("#partieWonLose").text("Level Suivant");
             $("#partieWonLose").css("color", "green");
@@ -110,6 +112,26 @@ Body.prototype.collision = function (b) {
             bird = null;
             init(level);
 		}
+
+
+		var impact=(Math.abs(s2.velocity.x)-Math.abs(s1.velocity.x))+(Math.abs(s2.velocity.y)-Math.abs(s1.velocity.y));
+
+
+		console.log(Math.floor(Math.log(impact*100))-2);
+
+		if(s1.constructor.name=="Bird" || s2.constructor.name=="Bird")
+		{
+			if (s1.constructor.name != "Bird")
+			{
+				let x=s1;
+				s1=s2;
+				s2=s1;
+			}
+			if(s1.life>0)
+			{
+				
+			}
+		}		
 		//console.log(s1+" "+s2);
 
 
