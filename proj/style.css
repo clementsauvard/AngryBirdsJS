@@ -15,3 +15,20 @@
     font-size: 50px;
     color: black;
 }
+
+#partieWonLose {
+    position: absolute;
+    top:50px;
+    left:340px;
+    font-family: "Courier New", Courier, monospace;
+    font-size: 50px;
+    font-weight: bold;
+    color:green;
+    display: none;
+}
+
+#nbOiseau {
+    font-weight: bold;
+    font-size: 50px;
+    color: blue;
+}

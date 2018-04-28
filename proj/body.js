@@ -102,6 +102,9 @@ Body.prototype.collision = function (b) {
 		//engine.removeBody(this);
 		if(s1.constructor.name=="Cible" && s2.constructor.name=="Bird")
 		{
+            $("#partieWonLose").text("Level Suivant");
+            $("#partieWonLose").css("color", "green");
+            $("#partieWonLose").slideToggle(400, function(){$("#partieWonLose").slideToggle(3000)});
 			launch=false;
             level++;
             stop();
