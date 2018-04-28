@@ -98,19 +98,19 @@ Body.prototype.collision = function (b) {
 			s2 =b
 		}
 
-		//console.log(engine);
-		//engine.removeBody(this);
 		if(s1.constructor.name=="Cible" && s2.constructor.name=="Bird")
 		{
-            $("#partieWonLose").text("Level Suivant");
-            $("#partieWonLose").css("color", "green");
-            $("#partieWonLose").slideToggle(400, function(){$("#partieWonLose").slideToggle(3000)});
-			launch=false;
-            level++;
-            stop();
-            engine.bodies = [];
-            bird = null;
-            init(level);
+            if (s1.life < 1){
+                $("#partieWonLose").text("Level Suivant");
+                $("#partieWonLose").css("color", "green");
+                $("#partieWonLose").slideToggle(400, function(){$("#partieWonLose").slideToggle(3000)});
+                launch=false;
+                level++;
+                stop();
+                engine.bodies = [];
+                bird = null;
+                init(level);
+            }
 		}
 
 
@@ -128,21 +128,18 @@ Body.prototype.collision = function (b) {
 			var impact=(Math.abs(s1.velocity.x)-Math.abs(s2.velocity.x))+(Math.abs(s1.velocity.y)-Math.abs(s2.velocity.y));
 			impact=Math.floor(Math.log2(impact*100))-3;
 			if(impact<0){impact=0;}
-			console.log(impact);
 			
 			if(s2.life>0)
 			{
-				s2.life = s2.life - impact;	
+				s2.life = s2.life - impact;
 				if(s2.life<1)
 				{
-
-					engine.removeBody(s2);				
-				
+                    if (s2.constructor.name != "Cible"){
+					   engine.removeBody(s2);				
+                    }
 				}
 			}
 		}		
-		//console.log(s1+" "+s2);
-
 
         return { velocity1 : new_v, velocity2 : new_bv };
 

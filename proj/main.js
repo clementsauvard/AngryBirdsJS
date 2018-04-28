@@ -45,7 +45,6 @@ var init = function (level) {
             bird.force = new Vector(0.0, 0.0);  
             engine.addBody(bird);
 
-            
             var cible = new Cible(new Vector(json[level].level[4].ciblePosX, json[level].level[4].ciblePosY), json[level].level[4].cibleWidth, json[level].level[4].cibleHeight, Infinity,1,json[level].level[4].life,canvas);
             engine.addBody(cible);
 

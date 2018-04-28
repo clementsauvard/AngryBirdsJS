@@ -10,16 +10,17 @@ Sprite.prototype.draw = function () {
 
     var ctx = this.display.getContext("2d");    
     ctx.beginPath();
-    /*
+    
     ctx.rect(this.origin.x, this.origin.y, this.width, this.height);
-    ctx.fillStyle = 'black';
+    ctx.fillStyle = 'red';
     ctx.fill();
-    */
+    
+    /*
     var img = new Image();   // Crée un nouvel élément Image
     img.src = '/img/wall.png';
     ctx.drawImage(img,this.origin.x, this.origin.y, this.width, this.height);
     ctx.stroke();
-    
+    */
     
     /* begin extra */
     if (this.hasCollision) {
