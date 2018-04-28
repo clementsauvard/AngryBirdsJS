@@ -100,8 +100,12 @@ Body.prototype.collision = function (b) {
 
 		if(s1=="Cible" && s2=="Bird")
 		{
-			console.log(s1+" "+s2);
-			//this.display.style.backgroundColor = "red";
+			launch=false;
+            level++;
+            stop();
+            engine.bodies = [];
+            bird = null;
+            init(level);
 		}
 		//console.log(s1+" "+s2);
 

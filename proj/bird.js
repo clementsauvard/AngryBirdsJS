@@ -22,7 +22,7 @@ Bird.prototype.draw = function () {
 
     /* begin extra */
     if (this.hasCollision && this.elasticity > 0) {
-        if (Math.abs(this.velocity.x) <0.01 && Math.abs(this.velocity.y) < 0.01){
+        if (Math.abs(this.velocity.x) <0.05 && Math.abs(this.velocity.y) < 0.05){
             this.stopcpt=this.stopcpt+1;
             if (this.stopcpt>100){
             launch=false;
