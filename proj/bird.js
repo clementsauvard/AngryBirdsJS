@@ -25,9 +25,7 @@ Bird.prototype.draw = function () {
         if (Math.abs(this.velocity.x) <0.05 && Math.abs(this.velocity.y) < 0.05){
             this.stopcpt=this.stopcpt+1;
             if (this.stopcpt>100){
-                console.log(nbBird);
                 nbBird--;
-                console.log(nbBird);
                 $("#nbOiseau").text("Oiseau restant : " + nbBird);
                 if (nbBird == 0){
                     $("#partieWonLose").text("GameOver");
