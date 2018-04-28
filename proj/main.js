@@ -13,7 +13,7 @@ var init = function (level) {
         
         $.getJSON( "levels.json", function( json ) {
             
-            Constants.gravity = new Vector (0, 0.0002);
+            Constants.gravity = new Vector (0, 0.0006);
         
             var canvas = document.getElementById("canvas");
             canvas.width = json[level].level[0].width;
@@ -41,7 +41,7 @@ var init = function (level) {
             bird = new Bird(new Vector(json[level].level[3].birdPosX, json[level].level[3].birdPosY), json[level].level[3].birdWidth, json[level].level[3].birdHeight, Infinity,0.65,canvas);
             nbBird = 3;
             $("#nbOiseau").text("Oiseau restant : " + nbBird);
-            bird = new Bird(new Vector(json[level].level[3].birdPosX, json[level].level[3].birdPosY), json[level].level[3].birdWidth, json[level].level[3].birdHeight, Infinity,0.65,-1,canvas);
+            bird = new Bird(new Vector(json[level].level[3].birdPosX, json[level].level[3].birdPosY), json[level].level[3].birdWidth, json[level].level[3].birdHeight, Infinity,0.6,-1,canvas);
             savePosX = json[level].level[3].birdPosX;
             savePosY = json[level].level[3].birdPosY;
             bird.force = new Vector(0.0, 0.0);  
@@ -114,7 +114,7 @@ var init = function (level) {
                 launch=true;
                 var xvect = moveX - initX;
                 var yvect = moveY - initY;
-                var vectTest = new Vector(1.3*(-xvect), 1.3*(-yvect));
+                var vectTest = new Vector(2*(-xvect), 2*(-yvect));
                 if(drag){
                     bird.mass = json[level].level[3].masse;
                     bird.invMass = 1/json[level].level[3].masse;
