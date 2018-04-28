@@ -5,14 +5,16 @@
 }
 
 #showFPS {
+    display: inline;
     font-weight: bold;
-    font-size: 50px;
+    font-size: 30px;
     color: red;
 }
 
 #niveau {
+    display: inline;
     font-weight: bold;
-    font-size: 50px;
+    font-size: 30px;
     color: black;
 }
 
@@ -28,9 +30,12 @@
 }
 
 #nbOiseau {
+    display: inline;
     font-weight: bold;
-    font-size: 50px;
+    font-size: 30px;
     color: blue;
+    margin-left: 48vh;
+    margin-right: 48vh;
 }
 
 
@@ -38,3 +43,7 @@
 
 
 
+
+#canvas {
+   background-color: yellow;
+}
