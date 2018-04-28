@@ -1,5 +1,5 @@
-var Bird = function (v, w, h, m,e, dom) {
-    Body.call(this,v, w, h, m,e);
+var Bird = function (v, w, h, m,e,l, dom) {
+    Body.call(this,v, w, h, m,e,l);
     this.display = dom;
     this.stopcpt=0;
 };

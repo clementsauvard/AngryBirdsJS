@@ -22,31 +22,31 @@ var init = function (level) {
 
 
             for (var i = 0; i < json[level].level[1].length; i++){
-                var wall1 = new Sprite(new Vector(json[level].level[1][i].xWall,json[level].level[1][i].yWall), json[level].level[1][i].width, json[level].level[1][i].height , Infinity,1,canvas);
+                var wall1 = new Sprite(new Vector(json[level].level[1][i].xWall,json[level].level[1][i].yWall), json[level].level[1][i].width, json[level].level[1][i].height , Infinity,1,-1,canvas);
                 engine.addBody(wall1);
             }
 
             for (var i = 0; i < json[level].level[2].length; i++){
-                var wall2 = new Sprite(new Vector(json[level].level[2][i].xWall,json[level].level[2][i].yWall), json[level].level[2][i].width, json[level].level[2][i].height , Infinity,1,canvas);
+                var wall2 = new Sprite(new Vector(json[level].level[2][i].xWall,json[level].level[2][i].yWall), json[level].level[2][i].width, json[level].level[2][i].height , Infinity,1,-1,canvas);
                 engine.addBody(wall2);
             }
             
             console.log(json[level].level[5]);
             if (json[level].level[5] != null){
                 for (var i = 0; i < json[level].level[5].length; i++){
-                    var box = new Box(new Vector(json[level].level[5][i].xBox,json[level].level[5][i].yBox), json[level].level[5][i].boxWidth, json[level].level[5][i].boxHeight , 500,0.5,canvas);
+                    var box = new Box(new Vector(json[level].level[5][i].xBox,json[level].level[5][i].yBox), json[level].level[5][i].boxWidth, json[level].level[5][i].boxHeight , 2000,0.5,100,canvas);
                     engine.addBody(box);
                 }
             }
 
-            bird = new Bird(new Vector(json[level].level[3].birdPosX, json[level].level[3].birdPosY), json[level].level[3].birdWidth, json[level].level[3].birdHeight, Infinity,0.65,canvas);
+            bird = new Bird(new Vector(json[level].level[3].birdPosX, json[level].level[3].birdPosY), json[level].level[3].birdWidth, json[level].level[3].birdHeight, Infinity,0.65,-1,canvas);
             savePosX = json[level].level[3].birdPosX;
             savePosY = json[level].level[3].birdPosY;
             bird.force = new Vector(0.0, 0.0);  
             engine.addBody(bird);
 
             
-            var cible = new Cible(new Vector(json[level].level[4].ciblePosX, json[level].level[4].ciblePosY), json[level].level[4].cibleWidth, json[level].level[4].cibleHeight, Infinity,1,canvas);
+            var cible = new Cible(new Vector(json[level].level[4].ciblePosX, json[level].level[4].ciblePosY), json[level].level[4].cibleWidth, json[level].level[4].cibleHeight, Infinity,1,-1,canvas);
             engine.addBody(cible);
 
             var renderer = new Renderer(engine);
