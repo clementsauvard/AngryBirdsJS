@@ -34,7 +34,7 @@ var init = function (level) {
             console.log(json[level].level[5]);
             if (json[level].level[5] != null){
                 for (var i = 0; i < json[level].level[5].length; i++){
-                    var box = new Box(new Vector(json[level].level[5][i].xBox,json[level].level[5][i].yBox), json[level].level[5][i].boxWidth, json[level].level[5][i].boxHeight , 2000,0.5,100,canvas);
+                    var box = new Box(new Vector(json[level].level[5][i].xBox,json[level].level[5][i].yBox), json[level].level[5][i].boxWidth, json[level].level[5][i].boxHeight , 2000,0.5,3,canvas);
                     engine.addBody(box);
                 }
             }
@@ -112,7 +112,7 @@ var init = function (level) {
                 launch=true;
                 var xvect = moveX - initX;
                 var yvect = moveY - initY;
-                var vectTest = new Vector(1.3*(-xvect), 1.3*(-yvect));
+                var vectTest = new Vector(2*(-xvect), 2*(-yvect));
                 if(drag){
                     bird.mass = json[level].level[3].masse;
                     bird.invMass = 1/json[level].level[3].masse;
