@@ -5,13 +5,13 @@ var engine = new Engine();
 var bird;
 var savePosX;
 var savePosY;
+var nbBird;
 var init = function (level) {
     $(function(){
         
         $("#niveau").text("Niveau : " + level);
         
         $.getJSON( "levels.json", function( json ) {
-            console.log(json);
             
             Constants.gravity = new Vector (0, 0.0002);
         
@@ -31,7 +31,6 @@ var init = function (level) {
                 engine.addBody(wall2);
             }
             
-            console.log(json[level].level[5]);
             if (json[level].level[5] != null){
                 for (var i = 0; i < json[level].level[5].length; i++){
                     var box = new Box(new Vector(json[level].level[5][i].xBox,json[level].level[5][i].yBox), json[level].level[5][i].boxWidth, json[level].level[5][i].boxHeight , 500,0.5,canvas);
@@ -40,6 +39,8 @@ var init = function (level) {
             }
 
             bird = new Bird(new Vector(json[level].level[3].birdPosX, json[level].level[3].birdPosY), json[level].level[3].birdWidth, json[level].level[3].birdHeight, Infinity,0.65,canvas);
+            nbBird = 3;
+            $("#nbOiseau").text("Oiseau restant : " + nbBird);
             savePosX = json[level].level[3].birdPosX;
             savePosY = json[level].level[3].birdPosY;
             bird.force = new Vector(0.0, 0.0);  

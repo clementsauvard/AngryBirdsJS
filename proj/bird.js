@@ -25,16 +25,29 @@ Bird.prototype.draw = function () {
         if (Math.abs(this.velocity.x) <0.05 && Math.abs(this.velocity.y) < 0.05){
             this.stopcpt=this.stopcpt+1;
             if (this.stopcpt>100){
-            launch=false;
-            console.log("XDD");
-            this.origin = new Vector(savePosX,savePosY);
-            this.force = new Vector(0.0,0.0);
-            this.velocity = new Vector(0.0,0.0);
-            this.mass = Infinity;
-            this.invMass = 1/Infinity;
-            this.stopcpt=0;
-
-
+                console.log(nbBird);
+                nbBird--;
+                console.log(nbBird);
+                $("#nbOiseau").text("Oiseau restant : " + nbBird);
+                if (nbBird == 0){
+                    $("#partieWonLose").text("GameOver");
+                    $("#partieWonLose").css("color", "red");
+                    $("#partieWonLose").slideToggle(400, function(){$("#partieWonLose").slideToggle(3000)});
+                    launch=false;
+                    stop();
+                    engine.bodies = [];
+                    bird = null;
+                    init(level);
+                }
+                else{
+                    launch=false;
+                    this.origin = new Vector(savePosX,savePosY);
+                    this.force = new Vector(0.0,0.0);
+                    this.velocity = new Vector(0.0,0.0);
+                    this.mass = Infinity;
+                    this.invMass = 1/Infinity;
+                    this.stopcpt=0;
+                }
             }        
         
         }

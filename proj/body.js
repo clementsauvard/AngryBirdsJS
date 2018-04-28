@@ -100,6 +100,9 @@ Body.prototype.collision = function (b) {
 
 		if(s1=="Cible" && s2=="Bird")
 		{
+            $("#partieWonLose").text("Level Suivant");
+            $("#partieWonLose").css("color", "green");
+            $("#partieWonLose").slideToggle(400, function(){$("#partieWonLose").slideToggle(3000)});
 			launch=false;
             level++;
             stop();
