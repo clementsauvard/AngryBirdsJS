@@ -12,9 +12,22 @@ Cible.prototype.draw = function () {
     ctx.beginPath();
     
     var img = new Image();   // Crée un nouvel élément Image
-    img.src = '/img/cible.png';
-    ctx.drawImage(img,this.origin.x, this.origin.y, this.width, this.height);
-    ctx.stroke();
+    if (this.life == 1){
+        img.src = '/img/cible.png';
+        ctx.drawImage(img,this.origin.x, this.origin.y, this.width, this.height);
+        ctx.stroke();
+    }
+    else if (this.life == 5){
+        img.src = '/img/cible3.png';
+        ctx.drawImage(img,this.origin.x, this.origin.y, this.width, this.height);
+        ctx.stroke();
+    }
+    else if (this.life < 5 && this.life > 0){
+        img.src = '/img/cible2.png';
+        ctx.drawImage(img,this.origin.x, this.origin.y, this.width, this.height);
+        ctx.stroke();
+    }
+    
     
     
     /* begin extra */

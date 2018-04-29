@@ -12,7 +12,7 @@ Sprite.prototype.draw = function () {
     ctx.beginPath();
     
     ctx.rect(this.origin.x, this.origin.y, this.width, this.height);
-    if (this.life < 0){
+    if (this.life <= 0){
         ctx.fillStyle = 'green';    
         ctx.fill();
     }
