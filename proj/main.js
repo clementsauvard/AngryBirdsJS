@@ -103,7 +103,6 @@ var init = function (level) {
             
             $("#canvas").mousedown(function (e) {
                 if(e.offsetX > bird.origin.x && e.offsetX < bird.origin.x + bird.width &&  e.offsetY > bird.origin.y && e.offsetY < bird.origin.y + bird.height && launch==false){
-                    launch=true;
                     e.preventDefault();
                     obj2.play();
                     initX = e.offsetX;

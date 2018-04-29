@@ -12,8 +12,18 @@ Sprite.prototype.draw = function () {
     ctx.beginPath();
     
     ctx.rect(this.origin.x, this.origin.y, this.width, this.height);
-    ctx.fillStyle = 'green';
-    ctx.fill();
+    if (this.life < 0){
+        ctx.fillStyle = 'green';    
+        ctx.fill();
+    }
+    else if (this.life = 5){
+        ctx.fillStyle = 'dodgerblue';    
+        ctx.fill();
+    }
+    else if(this.life < 5){
+        ctx.fillStyle = 'red';    
+        ctx.fill();
+    }
     
     /*
     var img = new Image();   // Crée un nouvel élément Image

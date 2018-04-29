@@ -216,7 +216,7 @@
                     "yWall" : 480,
                     "width" : 20,
                     "height": 210,
-                    "life" : -1
+                    "life" : 1
                 }],
 
                     {
