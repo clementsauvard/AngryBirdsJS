@@ -19,7 +19,6 @@ var init = function (level) {
             canvas.width = json[level].level[0].width;
             canvas.height = json[level].level[0].height;
 
-
             for (var i = 0; i < json[level].level[1].length; i++){
                 var wall1 = new Sprite(new Vector(json[level].level[1][i].xWallCanvas,json[level].level[1][i].yWallCanvas), json[level].level[1][i].width, json[level].level[1][i].height , Infinity,1,-1,canvas);
                 engine.addBody(wall1);
@@ -143,8 +142,6 @@ var init = function (level) {
 
     });
 };
-//window.addEventListener("load", init);
-
 
 function stop() {
     if (idAnimation) {

@@ -1,18 +1,14 @@
 var Rect = function (v, w, h) {
 
-
     this.origin = v;
     Object.defineProperty ( this, "width", { writable: false, value : w });
     Object.defineProperty ( this, "height", { writable: false, value : h });
 
 };
 
-
 Rect.prototype.move = function (v) {
     this.origin = this.origin.add(v);
 };
-
-
 
 Rect.prototype.mDiff = function (r) {
 

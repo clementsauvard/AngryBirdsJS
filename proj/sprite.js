@@ -10,7 +10,8 @@ Sprite.prototype.draw = function () {
 
     var ctx = this.display.getContext("2d");    
     ctx.beginPath();
-    
+
+    //change l'image du mur en fonction de son etat    
     ctx.rect(this.origin.x, this.origin.y, this.width, this.height);
     if (this.life <= 0){
         ctx.fillStyle = 'green';    
@@ -25,20 +26,8 @@ Sprite.prototype.draw = function () {
         ctx.fill();
     }
     
-    /*
-    var img = new Image();   // Crée un nouvel élément Image
-    img.src = '/img/wall.png';
-    ctx.drawImage(img,this.origin.x, this.origin.y, this.width, this.height);
-    ctx.stroke();
-    */
-    
-    /* begin extra */
     if (this.hasCollision) {
-        //this.display.style.backgroundColor = "red";
         this.setCollision(false);
-    } else {
-        //this.display.style.backgroundColor = "";
     };
 
-    /* end extra */
 };

@@ -20,8 +20,6 @@ Engine.prototype.update = function (dt) {
 
         var body = this.bodies[i];
 
-
-
         // On regarde si avec une telle vitesse il peut y avoir collision avec les autres objets.
         for (var j = i+1; j < this.bodies.length; j++) {
 
@@ -37,12 +35,8 @@ Engine.prototype.update = function (dt) {
             };
         };
 
-
-	/* begin extra */
         if (Number.isFinite(body.mass))
 	    body.force = body.force.add(Constants.gravity.mult(body.mass));
-
-	/* end extra */
 
         // On calcule la nouvelle accéleration :
         var a = body.force.mult(body.invMass);

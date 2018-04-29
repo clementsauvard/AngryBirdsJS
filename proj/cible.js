@@ -6,12 +6,13 @@ var Cible = function (v, w, h, m ,e ,l,dom ) {
 
 Cible.prototype = Object.create (Body.prototype);
 Cible.prototype.constructor = Cible;
-
 Cible.prototype.draw = function () {
 
     var ctx = this.display.getContext("2d");        
     ctx.beginPath();
-    var img = new Image();   // Crée un nouvel élément Image
+    var img = new Image();
+
+    //change l'image de la cible en fonction de son etat
     if (this.life == 1 && this.testLife != 5){
         img.src = '/img/cible.png';
         ctx.drawImage(img,this.origin.x, this.origin.y, this.width, this.height);
@@ -28,13 +29,6 @@ Cible.prototype.draw = function () {
         ctx.stroke();
     }
     
-    
-    
-    /* begin extra */
-    if (this.hasCollision) {
-        this.setCollision(false);
-    } else {
-    };
+    if (this.hasCollision) {this.setCollision(false);};
 
-    /* end extra */
 };
