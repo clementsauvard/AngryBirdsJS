@@ -29,7 +29,7 @@ Sprite.prototype.draw = function () {
         ctx.fillStyle = 'pink';    
         ctx.fill();
     }
-    if(this.elasticity<0.2){
+    if(this.elasticity <= 0.2){
         ctx.fillStyle = 'yellow';    
         ctx.fill();
     }
