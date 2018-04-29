@@ -23,9 +23,20 @@
     <div id="partieWonLose"></div>
     <br>
     <div id="niveau"> Niveau : </div>
+    <input id="lvl" type="number" step="1" value="0" min="0" max="5">
     <div id ="nbOiseau"></div>
     <div id ="showFPS"> FPS : </div>
     
   </body>
+    <script>
+        $('#lvl').on('input', function() {
+                var lvlTemp = $('#lvl').val();
+                launch=false;
+                level = parseInt(lvlTemp);
+                engine.bodies = [];
+                bird = null;
+                init(level);
+            });
+    </script>
 
 </html>

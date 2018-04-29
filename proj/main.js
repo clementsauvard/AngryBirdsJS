@@ -9,7 +9,7 @@ var nbBird;
 var init = function (level) {
     $(function(){
         
-        $("#niveau").text("Niveau : " + level);
+        $("#lvl").val(level);
         
         $.getJSON( "levels.json", function( json ) {
             
@@ -89,9 +89,22 @@ var init = function (level) {
 
             var drag = false;
 
+            var obj = document.createElement("audio");
+            obj.src="/img/cri.mp3";
+            obj.volume=0.50;
+            obj.autoPlay=false;
+            obj.preLoad=true; 
+            
+            var obj2 = document.createElement("audio");
+            obj2.src="/img/stretched.mp3";
+            obj2.volume=0.50;
+            obj2.autoPlay=false;
+            obj2.preLoad=true;
+            
             $("#canvas").mousedown(function (e) {
                 if(e.offsetX > bird.origin.x && e.offsetX < bird.origin.x + bird.width &&  e.offsetY > bird.origin.y && e.offsetY < bird.origin.y + bird.height && launch == false){
                     e.preventDefault();
+                    obj2.play();
                     initX = e.offsetX;
                     initY = e.offsetY;
                     drag = true;
@@ -113,12 +126,18 @@ var init = function (level) {
                 var yvect = moveY - initY;
                 var vectTest = new Vector(2*(-xvect), 2*(-yvect));
                 if(drag){
+                    obj.play();
                     bird.mass = json[level].level[3].masse;
                     bird.invMass = 1/json[level].level[3].masse;
                     bird.force = vectTest;
                     drag = false;
+                    initX = undefined;
+                    initY = undefined;
+                    moveX = undefined;
+                    moveY = undefined;
                 }
             });
+            
         });
 
 
@@ -134,3 +153,12 @@ function stop() {
     }
 }
 init(level); 
+
+function newLevel() {
+    launch=false;
+    level++;
+    stop();
+    engine.bodies = [];
+    bird = null;
+    init(level);
+}

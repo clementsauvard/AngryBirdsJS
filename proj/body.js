@@ -104,12 +104,7 @@ Body.prototype.collision = function (b) {
                 $("#partieWonLose").text("Level Suivant");
                 $("#partieWonLose").css("color", "green");
                 $("#partieWonLose").slideToggle(400, function(){$("#partieWonLose").slideToggle(3000)});
-                launch=false;
-                level++;
-                stop();
-                engine.bodies = [];
-                bird = null;
-                init(level);
+                newLevel();
             }
 		}
 

@@ -9,6 +9,7 @@
     font-weight: bold;
     font-size: 30px;
     color: red;
+    margin-left: 380px;
 }
 
 #niveau {
@@ -34,16 +35,18 @@
     font-weight: bold;
     font-size: 30px;
     color: blue;
-    margin-left: 48vh;
-    margin-right: 48vh;
+    margin-left: 300px;
 }
 
-
-
-
-
-
-
 #canvas {
-   background-color: yellow;
+   background-image: url("/img/background.png");;
+}
+
+input[type=number] {
+    cursor: pointer;
+    width: 60px;
+    height: 30px;
+    text-align: center;
+    font-weight: bold;
+    font-size: 30px;
 }
