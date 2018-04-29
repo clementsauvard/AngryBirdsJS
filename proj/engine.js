@@ -36,7 +36,7 @@ Engine.prototype.update = function (dt) {
         };
 
         if (Number.isFinite(body.mass))
-	    body.force = body.force.add(Constants.gravity.mult(body.mass));
+	    body.force = body.force.add(gravity.mult(body.mass));
 
         // On calcule la nouvelle accéleration :
         var a = body.force.mult(body.invMass);

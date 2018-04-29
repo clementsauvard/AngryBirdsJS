@@ -6,6 +6,7 @@ var bird;
 var savePosX;
 var savePosY;
 var nbBird;
+var gravity = new Vector(0, 0.0006)
 var init = function (level) {
     $(function(){
         
