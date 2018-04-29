@@ -109,19 +109,15 @@ Body.prototype.collision = function (b) {
 				s1=s2;
 				s2=x;
 			}
-			//console.log(s1);
-			//console.log(s2);
 			
 			if(s2.life>0)
 			{
-				console.log(s2);
 				var impact=(Math.abs(s1.velocity.x)-Math.abs(s2.velocity.x))+(Math.abs(s1.velocity.y)-Math.abs(s2.velocity.y));
 				impact=Math.floor(Math.log2(impact*100))-3;
 				if(impact<0){impact=0;}
 				s2.life = s2.life - impact;
 				if(s2.life<1)
 				{
-					console.log("NOT ME");
                     if (s2.constructor.name != "Cible"){
 					   engine.removeBody(s2);				
                     }
