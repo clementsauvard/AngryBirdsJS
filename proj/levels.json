@@ -59,7 +59,7 @@
                             "ciblePosY" : 550,
                             "cibleHeight" : 40,
                             "cibleWidth" : 40,
-                            "life" : -1
+                            "life" : 1
                         },
          
          
@@ -229,8 +229,8 @@
                         {
                             "ciblePosX" : 1050,
                             "ciblePosY" : 550,
-                            "cibleHeight" : 30,
-                            "cibleWidth" : 30,
+                            "cibleHeight" : 40,
+                            "cibleWidth" : 40,
                             "life" : -1
                         },
                              [{
@@ -323,8 +323,8 @@
                         {
                             "ciblePosX" : 900,
                             "ciblePosY" : 500,
-                            "cibleHeight" : 30,
-                            "cibleWidth" : 30,
+                            "cibleHeight" : 40,
+                            "cibleWidth" : 40,
                             "life" : 5
                         },
                             [{

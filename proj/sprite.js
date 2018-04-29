@@ -12,7 +12,7 @@ Sprite.prototype.draw = function () {
     ctx.beginPath();
     
     ctx.rect(this.origin.x, this.origin.y, this.width, this.height);
-    ctx.fillStyle = 'chartreuse';
+    ctx.fillStyle = 'green';
     ctx.fill();
     
     /*
