@@ -18,13 +18,13 @@ Bird.prototype.draw = function () {
     
     if (this.hasCollision ) 
     {
-        //is l'oiseau est trop lent
+        //si l'oiseau est trop lent
         if (Math.abs(this.velocity.x) <0.05 && Math.abs(this.velocity.y) < 0.05)
         {
             //on note qu'il est lent
             this.stopcpt=this.stopcpt+1;
             
-            //si l'oiseau a trop ete lent
+            //si l'oiseau a trop été lent
             if (this.stopcpt>100)
             {
                 

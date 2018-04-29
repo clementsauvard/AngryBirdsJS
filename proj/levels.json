@@ -4,32 +4,36 @@
         {
             "width" : 1200,
             "height" : 700,
-            "title" : "bob"
+            "title" : "level1"
 
         },
             [{
                 "xWallCanvas" : 0,
                 "yWallCanvas" : 0,
                 "width" : 1200,
-                "height": 10
+                "height": 10,
+                "elasticity":0.6
             },
             {
                 "xWallCanvas" : 0,
                 "yWallCanvas" : 690,
                 "width" : 1200,
-                "height": 10
+                "height": 10,
+                "elasticity":0.6
             },
             {
                 "xWallCanvas" : 0,
                 "yWallCanvas" : 10,
                 "width" : 10,
-                "height": 690
+                "height": 690,
+                "elasticity":0.6
             },
             {
                 "xWallCanvas" : 1190,
                 "yWallCanvas" : 10,
                 "width" : 10,
-                "height": 690
+                "height": 690,
+                "elasticity":0.6
             }],
 
                 [{
@@ -37,14 +41,16 @@
                     "yWall" : 330,
                     "width" : 290,
                     "height": 20,
-                    "life" : 5
+                    "life" : 5,
+                    "elasticity":0.6
                 },
                  {
                     "xWall" : 800,
                     "yWall" : 420,
                     "width" : 20,
                     "height": 270,
-                    "life" : 5
+                    "life" : 5,
+                    "elasticity":0.6
                 }],
 
                     {
@@ -52,14 +58,16 @@
                         "birdPosY" : 350,
                         "birdHeight" : 30,
                         "birdWidth" : 30,
-                        "masse" : 10000
+                        "masse" : 10000,
+                        "elasticity":0.6
                     },
                         {
                             "ciblePosX" : 1050,
                             "ciblePosY" : 550,
                             "cibleHeight" : 40,
                             "cibleWidth" : 40,
-                            "life" : 1
+                            "life" : 1,
+                            "elasticity":0.6
                         },
          
          
@@ -68,91 +76,104 @@
                                 "yBox" : 650,
                                 "boxWidth" : 50,
                                 "boxHeight": 50,
-                                "life" : 3
+                                "life" : 3,
+                                "elasticity":0.5
                             },
                             {
                                 "xBox" : 980,
                                 "yBox" : 600,
                                 "boxWidth" : 50,
                                 "boxHeight": 50,
-                                "life" : 3
+                                "life" : 3,
+                                "elasticity":0.5
                             },
                             {
                                 "xBox" : 980,
                                 "yBox" : 550,
                                 "boxWidth" : 50,
                                 "boxHeight": 50,
-                                "life" : 3
+                                "life" : 3,
+                                "elasticity":0.5
                             },
                             {
                                 "xBox" : 980,
                                 "yBox" : 500,
                                 "boxWidth" : 50,
                                 "boxHeight": 50,
-                                "life" : 3
+                                "life" : 3,
+                                "elasticity":0.5
                             },
                              {
                                 "xBox" : 930,
                                 "yBox" : 650,
                                 "boxWidth" : 50,
                                 "boxHeight": 50,
-                                "life" : 3
+                                "life" : 3,
+                                "elasticity":0.5
                             },
                             {
                                 "xBox" : 930,
                                 "yBox" : 600,
                                 "boxWidth" : 50,
                                 "boxHeight": 50,
-                                "life" : 3
+                                "life" : 3,
+                                "elasticity":0.5
                             },
                             {
                                 "xBox" : 930,
                                 "yBox" : 550,
                                 "boxWidth" : 50,
                                 "boxHeight": 50,
-                                "life" : 3
+                                "life" : 3,
+                                "elasticity":0.5
                             },
                             {
                                 "xBox" : 930,
                                 "yBox" : 500,
                                 "boxWidth" : 50,
                                 "boxHeight": 50,
-                                "life" : 3
+                                "life" : 3,
+                                "elasticity":0.5
                             },
                              {
                                 "xBox" : 930,
                                 "yBox" : 450,
                                 "boxWidth" : 50,
                                 "boxHeight": 50,
-                                "life" : 3
+                                "life" : 3,
+                                "elasticity":0.5
                             },
                              {
                                 "xBox" : 980,
                                 "yBox" : 450,
                                 "boxWidth" : 50,
                                 "boxHeight": 50,
-                                "life" : 3
+                                "life" : 3,
+                                "elasticity":0.5
                             },
                              {
                                 "xBox" : 785,
                                 "yBox" : 300,
                                 "boxWidth" : 50,
                                 "boxHeight": 50,
-                                "life" : 3
+                                "life" : 3,
+                                "elasticity":0.5
                             },
                              {
                                 "xBox" : 400,
                                 "yBox" : 550,
                                 "boxWidth" : 50,
                                 "boxHeight": 50,
-                                "life" : 3
+                                "life" : 3,
+                                "elasticity":0.5
                             },
                             {
                                 "xBox" : 400,
                                 "yBox" : 500,
                                 "boxWidth" : 50,
                                 "boxHeight": 50,
-                                "life" : 3
+                                "life" : 3,
+                                "elasticity":0.5
                             }]
          
          
@@ -162,32 +183,36 @@
         {
             "width" : 1200,
             "height" : 700,
-            "title" : "bob2"
+            "title" : "level2"
 
         },
             [{
                 "xWallCanvas" : 0,
                 "yWallCanvas" : 0,
                 "width" : 1200,
-                "height": 10
+                "height": 10,
+                "elasticity":0.6
             },
             {
                 "xWallCanvas" : 0,
                 "yWallCanvas" : 690,
                 "width" : 1200,
-                "height": 10
+                "height": 10,
+                "elasticity":0.6
             },
             {
                 "xWallCanvas" : 0,
                 "yWallCanvas" : 10,
                 "width" : 10,
-                "height": 690
+                "height": 690,
+                "elasticity":0.6
             },
             {
                 "xWallCanvas" : 1190,
                 "yWallCanvas" : 10,
                 "width" : 10,
-                "height": 690
+                "height": 690,
+                "elasticity":0.6
             }],
 
                 [{
@@ -195,28 +220,32 @@
                     "yWall" : 440,
                     "width" : 20,
                     "height": 250,
-                    "life" : -1
+                    "life" : -1,
+                    "elasticity":0.6  
                 },
                 {
                     "xWall" : 500,
                     "yWall" : 10,
                     "width" : 20,
                     "height": 250,
-                    "life" : -1
+                    "life" : -1,
+                    "elasticity":0.6
                 },
                  {
                     "xWall" : 780,
                     "yWall" : 330,
                     "width" : 200,
                     "height": 20,
-                     "life" : -1
+                     "life" : -1,
+                    "elasticity":0.6
                 },
                 {
                     "xWall" : 950,
                     "yWall" : 480,
                     "width" : 20,
                     "height": 210,
-                    "life" : -1
+                    "life" : 5,
+                    "elasticity":0.6
                 }],
 
                     {
@@ -224,35 +253,40 @@
                         "birdPosY" : 350,
                         "birdHeight" : 30,
                         "birdWidth" : 30,
-                        "masse" : 10000
+                        "masse" : 10000,
+                        "elasticity":0.6
                     },
                         {
                             "ciblePosX" : 1050,
                             "ciblePosY" : 550,
                             "cibleHeight" : 40,
                             "cibleWidth" : 40,
-                            "life" : 1
+                            "life" : 1,
+                            "elasticity":0.6
                         },
                              [{
                                 "xBox" : 485,
                                 "yBox" : 300,
                                 "boxWidth" : 50,
                                 "boxHeight": 50,
-                                "life" : 3
+                                "life" : 3,
+                                "elasticity":0.5
                             },
                             {
                                 "xBox" : 765,
                                 "yBox" : 400,
                                 "boxWidth" : 50,
                                 "boxHeight": 50,
-                                "life" : 3
+                                "life" : 3,
+                                "elasticity":0.5
                             },
                             {
                                 "xBox" : 765,
                                 "yBox" : 450,
                                 "boxWidth" : 50,
                                 "boxHeight": 50,
-                                "life" : 3
+                                "life" : 3,
+                                "elasticity":0.5
                             }]
         ]},
     {
@@ -260,32 +294,36 @@
         {
             "width" : 1200,
             "height" : 700,
-            "title" : "bob3"
+            "title" : "level3"
 
         },
             [{
                 "xWallCanvas" : 0,
                 "yWallCanvas" : 0,
                 "width" : 1200,
-                "height": 10
+                "height": 10,
+                "elasticity":0.6
             },
             {
                 "xWallCanvas" : 0,
                 "yWallCanvas" : 690,
                 "width" : 1200,
-                "height": 10
+                "height": 10,
+                "elasticity":0.6
             },
             {
                 "xWallCanvas" : 0,
                 "yWallCanvas" : 10,
                 "width" : 10,
-                "height": 690
+                "height": 690,
+                "elasticity":0.6
             },
             {
                 "xWallCanvas" : 1190,
                 "yWallCanvas" : 10,
                 "width" : 10,
-                "height": 690
+                "height": 690,
+                "elasticity":0.6
             }],
 
                 [{
@@ -293,28 +331,32 @@
                     "yWall" : 280,
                     "width" : 20,
                     "height": 250,
-                    "life" : -1
+                    "life" : -1,
+                    "elasticity":0.6
                 },
                 {
                     "xWall" : 500,
                     "yWall" : 200,
                     "width" : 200,
                     "height": 20,
-                    "life" : -1
+                    "life" : -1,
+                    "elasticity":0.6
                 },
                  {
                     "xWall" : 700,
                     "yWall" : 330,
                     "width" : 200,
                     "height": 20,
-                    "life" : -1
+                    "life" : -1,
+                    "elasticity":0.6
                 },
                 {
                     "xWall" : 780,
                     "yWall" : 480,
                     "width" : 20,
                     "height": 100,
-                    "life" : -1
+                    "life" : -1,
+                    "elasticity":0.6
                 }],
 
                     {
@@ -322,49 +364,184 @@
                         "birdPosY" : 300,
                         "birdHeight" : 30,
                         "birdWidth" : 30,
-                        "masse" : 10000
+                        "masse" : 10000,
+                        "elasticity":0.6
                     },
                         {
                             "ciblePosX" : 900,
                             "ciblePosY" : 500,
                             "cibleHeight" : 40,
                             "cibleWidth" : 40,
-                            "life" : 5
+                            "life" : 5,
+                            "elasticity":0.6
                         },
                             [{
                                 "xBox" : 800,
                                 "yBox" : 400,
                                 "boxWidth" : 50,
                                 "boxHeight": 50,
-                                "life" : 3
+                                "life" : 3,
+                                "elasticity":0.5
                             },
                             {
                                 "xBox" : 800,
                                 "yBox" : 300,
                                 "boxWidth" : 50,
                                 "boxHeight": 50,
-                                "life" : 3
+                                "life" : 3,
+                                "elasticity":0.5
                             },
                              {
                                 "xBox" : 800,
                                 "yBox" : 250,
                                 "boxWidth" : 50,
                                 "boxHeight": 50,
-                                "life" : 3
+                                "life" : 3,
+                                "elasticity":0.5
                             },
                              {
                                 "xBox" : 400,
                                 "yBox" : 360,
                                 "boxWidth" : 50,
                                 "boxHeight": 50,
-                                "life" : 3
+                                "life" : 3,
+                                "elasticity":0.5
                             },
                             {
                                 "xBox" : 400,
                                 "yBox" : 300,
                                 "boxWidth" : 50,
                                 "boxHeight": 50,
-                                "life" : 3
+                                "life" : 3,
+                                "elasticity":0.5
+                            }]
+        ]
+    },
+    {
+    "level" : [
+        {
+            "width" : 1200,
+            "height" : 700,
+            "title" : "level3"
+
+        },
+            [{
+                "xWallCanvas" : 0,
+                "yWallCanvas" : 0,
+                "width" : 1200,
+                "height": 10,
+                "elasticity":0.6
+            },
+            {
+                "xWallCanvas" : 0,
+                "yWallCanvas" : 690,
+                "width" : 1200,
+                "height": 10,
+                "elasticity":0.6
+            },
+            {
+                "xWallCanvas" : 0,
+                "yWallCanvas" : 10,
+                "width" : 10,
+                "height": 690,
+                "elasticity":0.6
+            },
+            {
+                "xWallCanvas" : 1190,
+                "yWallCanvas" : 10,
+                "width" : 10,
+                "height": 690,
+                "elasticity":0.6
+            }],
+
+                [{
+                    "xWall" : 300,
+                    "yWall" : 280,
+                    "width" : 20,
+                    "height": 250,
+                    "life" : -1,
+                    "elasticity":0.6
+                },
+                {
+                    "xWall" : 500,
+                    "yWall" : 200,
+                    "width" : 200,
+                    "height": 20,
+                    "life" : -1,
+                    "elasticity":0.6
+                },
+                 {
+                    "xWall" : 850,
+                    "yWall" : 670,
+                    "width" : 200,
+                    "height": 20,
+                    "life" : -1,
+                    "elasticity":1
+                },
+                {
+                    "xWall" : 850,
+                    "yWall" : 10,
+                    "width" : 200,
+                    "height": 20,
+                    "life" : -1,
+                    "elasticity":1
+                }],
+
+                    {
+                        "birdPosX" : 200,
+                        "birdPosY" : 300,
+                        "birdHeight" : 30,
+                        "birdWidth" : 30,
+                        "masse" : 10000,
+                        "elasticity":0.6
+                    },
+                        {
+                            "ciblePosX" : 900,
+                            "ciblePosY" : 500,
+                            "cibleHeight" : 40,
+                            "cibleWidth" : 40,
+                            "life" : 5,
+                            "elasticity":0.6
+                        },
+                            [{
+                                "xBox" : 800,
+                                "yBox" : 400,
+                                "boxWidth" : 50,
+                                "boxHeight": 50,
+                                "life" : 3,
+                                "elasticity":0.5
+                            },
+                            {
+                                "xBox" : 800,
+                                "yBox" : 300,
+                                "boxWidth" : 50,
+                                "boxHeight": 50,
+                                "life" : 3,
+                                "elasticity":0.5
+                            },
+                             {
+                                "xBox" : 800,
+                                "yBox" : 250,
+                                "boxWidth" : 50,
+                                "boxHeight": 50,
+                                "life" : 3,
+                                "elasticity":0.5
+                            },
+                             {
+                                "xBox" : 400,
+                                "yBox" : 360,
+                                "boxWidth" : 50,
+                                "boxHeight": 50,
+                                "life" : 3,
+                                "elasticity":0.5
+                            },
+                            {
+                                "xBox" : 400,
+                                "yBox" : 300,
+                                "boxWidth" : 50,
+                                "boxHeight": 50,
+                                "life" : 3,
+                                "elasticity":0.5
                             }]
         ]
     }
