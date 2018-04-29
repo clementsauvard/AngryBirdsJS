@@ -16,11 +16,11 @@ Sprite.prototype.draw = function () {
         ctx.fillStyle = 'green';    
         ctx.fill();
     }
-    else if (this.life = 5){
+    else if (this.life == 5){
         ctx.fillStyle = 'dodgerblue';    
         ctx.fill();
     }
-    else if(this.life < 5){
+    else if(this.life < 5 && this.life > 0){
         ctx.fillStyle = 'red';    
         ctx.fill();
     }
