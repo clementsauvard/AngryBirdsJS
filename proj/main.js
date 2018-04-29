@@ -13,7 +13,6 @@ var init = function (level) {
         
         $.getJSON( "levels.json", function( json ) {
             
-            Constants.gravity = new Vector (0, 0.0006);
         
             var canvas = document.getElementById("canvas");
             canvas.width = json[level].level[0].width;
