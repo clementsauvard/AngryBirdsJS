@@ -91,7 +91,8 @@ Body.prototype.collision = function (b) {
 				var impact=(Math.abs(s1.velocity.x)-Math.abs(s2.velocity.x))+(Math.abs(s1.velocity.y)-Math.abs(s2.velocity.y));
 				impact=Math.floor(Math.log2(impact*100))-3;
 				if(impact<0){impact=0;}
-				
+				if (isNaN(impact)){impact=0;}
+
 				s2.life = s2.life - impact;
 				
 				//si on detruit la cible
