@@ -12,7 +12,7 @@ Bird.prototype.draw = function () {
     ctx.beginPath();
     var img = new Image();
 
-    img.src = '/img/bird1.jpg';
+    img.src = './img/bird1.jpg';
     ctx.drawImage(img,this.origin.x, this.origin.y, this.width, this.height);
     ctx.stroke();
     

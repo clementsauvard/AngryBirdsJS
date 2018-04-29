@@ -39,7 +39,7 @@
 }
 
 #canvas {
-   background-image: url("/img/background.png");;
+   background-image: url("./img/background.png");;
 }
 
 input[type=number] {

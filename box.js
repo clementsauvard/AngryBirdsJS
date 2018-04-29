@@ -12,7 +12,7 @@ Box.prototype.draw = function () {
     ctx.beginPath();
     var img = new Image();
     
-    img.src = '/img/box.png';
+    img.src = './img/box.png';
     ctx.drawImage(img,this.origin.x, this.origin.y, this.width, this.height);
     ctx.stroke();
 

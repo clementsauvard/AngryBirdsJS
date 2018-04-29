@@ -77,7 +77,7 @@ var init = function (level) {
                    $("#showFPS").text("FPS : "+ fps);
                     if (drag){
                         var img = new Image();   // Crée un nouvel élément Image
-                        img.src = '/img/slingshot.png';
+                        img.src = './img/slingshot.png';
                         var ctx=canvas.getContext("2d");
                         ctx.beginPath();
                         ctx.drawImage(img,moveX-20, moveY-50, 50, 50);
@@ -99,14 +99,14 @@ var init = function (level) {
 
             //Le cri quand on lance l'oiseau
             var obj = document.createElement("audio");
-            obj.src="/img/cri.mp3";
+            obj.src="./img/cri.mp3";
             obj.volume=0.10;
             obj.autoPlay=false;
             obj.preLoad=true; 
             
             //Le bruit d'étirement du lance pierre
             var obj2 = document.createElement("audio");
-            obj2.src="/img/stretched.mp3";
+            obj2.src="./img/stretched.mp3";
             obj2.volume=0.50;
             obj2.autoPlay=false;
             obj2.preLoad=true;

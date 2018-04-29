@@ -14,17 +14,17 @@ Cible.prototype.draw = function () {
 
     //change l'image de la cible en fonction de son etat
     if (this.life == 1 && this.testLife != 5){
-        img.src = '/img/cible.png';
+        img.src = './img/cible.png';
         ctx.drawImage(img,this.origin.x, this.origin.y, this.width, this.height);
         ctx.stroke();
     }
     else if (this.life == 5){
-        img.src = '/img/cible3.png';
+        img.src = './img/cible3.png';
         ctx.drawImage(img,this.origin.x, this.origin.y, this.width, this.height);
         ctx.stroke();
     }
     else if (this.life < 5 && this.life > 0){
-        img.src = '/img/cible2.png';
+        img.src = './img/cible2.png';
         ctx.drawImage(img,this.origin.x, this.origin.y, this.width, this.height);
         ctx.stroke();
     }
