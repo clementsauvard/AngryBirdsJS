@@ -124,7 +124,6 @@ var init = function (level) {
             
             //On sauvegarde la position lorsque la souris est en mouvement
             $("#canvas").mousemove(function (e) {
-                console.log("width : " + e.offsetX + " height : " +e.offsetY);
                 if (e.which == 1) {
                     e.preventDefault();
                     moveX = e.offsetX;
