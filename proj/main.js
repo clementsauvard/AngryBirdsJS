@@ -91,7 +91,7 @@ var init = function (level) {
 
             var obj = document.createElement("audio");
             obj.src="/img/cri.mp3";
-            obj.volume=0.50;
+            obj.volume=0.10;
             obj.autoPlay=false;
             obj.preLoad=true; 
             

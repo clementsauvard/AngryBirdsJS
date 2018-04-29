@@ -57,8 +57,8 @@
                         {
                             "ciblePosX" : 1050,
                             "ciblePosY" : 550,
-                            "cibleHeight" : 30,
-                            "cibleWidth" : 30,
+                            "cibleHeight" : 40,
+                            "cibleWidth" : 40,
                             "life" : -1
                         },
          
