@@ -51,7 +51,7 @@ var init = function (level) {
             engine.addBody(bird);
 
             //Création de la cible
-            var cible = new Cible(new Vector(json[level].level[4].ciblePosX, json[level].level[4].ciblePosY), json[level].level[4].cibleWidth, json[level].level[4].cibleHeight, Infinity,1,json[level].level[4].life,canvas);
+            var cible = new Cible(new Vector(json[level].level[4].ciblePosX, json[level].level[4].ciblePosY), json[level].level[4].cibleWidth, json[level].level[4].cibleHeight, json[level].level[4].masse,json[level].level[4].elasticity,json[level].level[4].life,canvas);
             engine.addBody(cible);
 
             //----------------------- Renderer, RequestAnimationFrame et affichage des FPS
@@ -125,7 +125,6 @@ var init = function (level) {
             
             //On sauvegarde la position lorsque la souris est en mouvement
             $("#canvas").mousemove(function (e) {
-                console.log("width : " + e.offsetX + " height : " +e.offsetY);
                 if (e.which == 1) {
                     e.preventDefault();
                     moveX = e.offsetX;

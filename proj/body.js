@@ -102,7 +102,7 @@ Body.prototype.collision = function (b) {
                     }
                     else{
 		                $("#partieWonLose").text("Level Suivant");
-		                $("#partieWonLose").css("color", "green");
+		                $("#partieWonLose").css("color", "white");
 		                $("#partieWonLose").slideToggle(400, function(){$("#partieWonLose").slideToggle(3000)});
 		                newLevel();
                     }
