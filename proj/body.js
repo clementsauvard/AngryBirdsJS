@@ -58,8 +58,8 @@ Body.prototype.collision = function (b) {
         var v = this.velocity.sub(b.velocity);
         var e = this.elasticity; 
 
-        var j1 = -(1 + e) * v.dot(n) / (this.invMass + b.invMass);
-		var j2 = -(1 + b.elasticity) * v.dot(n) / (this.invMass + b.invMass);
+        var j1 = -(1 + b.elasticity) * v.dot(n) / (this.invMass + b.invMass);
+		var j2 = -(1 + e) * v.dot(n) / (this.invMass + b.invMass);
 
         // On calcule les nouvelle vitesse:
         var new_v = this.velocity.add(n.mult(j1  * this.invMass));

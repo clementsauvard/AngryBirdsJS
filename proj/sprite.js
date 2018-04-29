@@ -25,6 +25,14 @@ Sprite.prototype.draw = function () {
         ctx.fillStyle = 'red';    
         ctx.fill();
     }
+    if(this.elasticity>0.9){
+        ctx.fillStyle = 'pink';    
+        ctx.fill();
+    }
+    if(this.elasticity<0.2){
+        ctx.fillStyle = 'yellow';    
+        ctx.fill();
+    }
     
     if (this.hasCollision) {
         this.setCollision(false);
