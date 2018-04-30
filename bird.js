@@ -19,7 +19,7 @@ Bird.prototype.draw = function () {
     if (this.hasCollision ) 
     {
         //si l'oiseau est trop lent
-        if (Math.abs(this.velocity.x) <0.05 && Math.abs(this.velocity.y) < 0.05)
+        if (Math.abs(this.velocity.x) <0.12 && Math.abs(this.velocity.y) < 0.12)
         {
             //on note qu'il est lent
             this.stopcpt=this.stopcpt+1;
@@ -32,9 +32,8 @@ Bird.prototype.draw = function () {
                 $("#nbOiseau").text("Oiseau restant : " + nbBird);
                 if (nbBird == 0)
                 {
-                    $("#partieWonLose").text("GameOver");
-                    $("#partieWonLose").css("color", "red");
-                    $("#partieWonLose").slideToggle(400, function(){$("#partieWonLose").slideToggle(3000)});
+                    $("#partieLose").text("GAME OVER");
+                    $("#partieLose").slideToggle(400, function(){$("#partieLose").slideToggle(3000)});
                     launch=false;
                     stop();
                     engine.bodies = [];

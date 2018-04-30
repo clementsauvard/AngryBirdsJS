@@ -241,14 +241,7 @@
                      "life" : -1,
                     "elasticity":0.6
                 },
-                 {
-                    "xWall" : 1070,
-                    "yWall" : 500,
-                    "width" : 100,
-                    "height": 20,
-                     "life" : -1,
-                    "elasticity":0.1
-                },
+                 
                  {
                     "xWall" : 970,
                     "yWall" : 500,
@@ -660,48 +653,104 @@
             }],
 
                 [{
-                    "xWall" : 800,
+                    "xWall" : 750,
                     "yWall" : 10,
                     "width" : 20,
                     "height": 250,
                     "life" : -1,
                     "elasticity":0.6
                 },
+                 {
+                    "xWall" : 415,
+                    "yWall" : 570,
+                    "width" : 20,
+                    "height": 120,
+                    "life" : -1,
+                    "elasticity":0.6
+                },
+                 {
+                    "xWall" : 700,
+                    "yWall" : 590,
+                    "width" : 20,
+                    "height": 100,
+                    "life" : -1,
+                    "elasticity":0.6
+                },
                 {
-                    "xWall" : 1000,
-                    "yWall" : 150,
+                    "xWall" : 880,
+                    "yWall" : 200,
                     "width" : 200,
                     "height": 20,
                     "life" : 5,
                     "elasticity":0.6
                 },
                  {
-                    "xWall" : 800,
-                    "yWall" : 400,
-                    "width" : 100,
-                    "height": 20,
-                    "life" : -1,
-                    "elasticity":0.2
-                },
-                 {
-                    "xWall" : 1080,
-                    "yWall" : 400,
+                    "xWall" : 960,
+                    "yWall" : 550,
                     "width" : 50,
                     "height": 20,
                     "life" : -1,
                     "elasticity":0.2
                 },
                  {
-                    "xWall" : 900,
-                    "yWall" : 670,
+                    "xWall" : 1170,
+                    "yWall" : 300,
+                    "width" : 20,
+                    "height": 50,
+                    "life" : -1,
+                    "elasticity":0.2
+                },
+                 {
+                    "xWall" : 1170,
+                    "yWall" : 400,
+                    "width" : 20,
+                    "height": 100,
+                    "life" : -1,
+                    "elasticity":0.2
+                },
+                 {
+                    "xWall" : 830,
+                    "yWall" : 520,
                     "width" : 100,
                     "height": 20,
                     "life" : -1,
                     "elasticity":1.2
                 },
+                 {
+                    "xWall" : 810,
+                    "yWall" : 520,
+                    "width" : 20,
+                    "height": 20,
+                    "life" : -1,
+                    "elasticity":0.6
+                },
+                 {
+                    "xWall" : 930,
+                    "yWall" : 520,
+                    "width" : 20,
+                    "height": 20,
+                    "life" : -1,
+                    "elasticity":0.6
+                },
+                 {
+                    "xWall" : 1020,
+                    "yWall" : 520,
+                    "width" : 20,
+                    "height": 20,
+                    "life" : -1,
+                    "elasticity":0.6
+                },
+                 {
+                    "xWall" : 1140,
+                    "yWall" : 520,
+                    "width" : 20,
+                    "height": 20,
+                    "life" : -1,
+                    "elasticity":0.6
+                },
                 {
-                    "xWall" : 1050,
-                    "yWall" : 670,
+                    "xWall" : 1040,
+                    "yWall" : 520,
                     "width" : 100,
                     "height": 20,
                     "life" : -1,
@@ -718,7 +767,7 @@
                         "elasticity":0.6
                     },
                         {
-                            "ciblePosX" : 1080,
+                            "ciblePosX" : 950,
                             "ciblePosY" : 120,
                             "cibleHeight" : 40,
                             "cibleWidth" : 40,
